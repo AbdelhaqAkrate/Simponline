@@ -3,6 +3,7 @@ package com.ken.simplon.Dao;
 import java.util.List;
 
 import entity.AdminEntity;
+import entity.PromotionEntity;
 
 public interface AdminDao {
     public boolean login(String login, String password);
@@ -10,6 +11,6 @@ public interface AdminDao {
     public void createApprenantAccount(String fullName, String email, String password);
     public void createPromo(String name);
     public void assignFormateurToPromo(Long idFormateur, Long idPromo);
-    public List<AdminEntity> getAllPromos();
+    public List<PromotionEntity> getAllPromos();
 
 }

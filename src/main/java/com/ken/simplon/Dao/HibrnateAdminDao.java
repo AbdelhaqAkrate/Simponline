@@ -14,7 +14,7 @@ public class HibrnateAdminDao implements AdminDao {
         EntityManager manager = EntityManagers.getEntityManagerFactory().createEntityManager();
         EntityTransaction transaction = manager.getTransaction();
         transaction.begin();
-        Query query = (Query) manager.createQuery("SELECT a FROM Admin a WHERE a.login = :login AND a.password = :password");
+        Query query = (Query) manager.createQuery("SELECT a FROM AdminEntity a WHERE a.email = :email AND a.password = :password");
         query.setParameter("login", login);
         query.setParameter("password", password);
         List list = query.getResultList();
@@ -71,15 +71,25 @@ public class HibrnateAdminDao implements AdminDao {
         transaction.commit();
         manager.close();
     }
-    public List<AdminEntity> getAllPromos() {
+    public List<PromotionEntity> getAllPromos() {
         EntityManager manager = EntityManagers.getEntityManagerFactory().createEntityManager();
         EntityTransaction transaction = manager.getTransaction();
         transaction.begin();
-        Query query = (Query) manager.createQuery("SELECT p FROM Promotion p");
+        Query query = (Query) manager.createQuery("SELECT p FROM PromotionEntity p");
         List list = query.getResultList();
         transaction.commit();
         manager.close();
         return list;
+    }
+    public static void main(String [] args)
+    {
+        HibrnateAdminDao adminDao = new HibrnateAdminDao();
+//        System.out.println(adminDao.getAllPromos());
+        List<PromotionEntity> promos = (List<PromotionEntity>) adminDao.getAllPromos();
+        for(PromotionEntity promo : promos)
+        {
+            System.out.println(promo.getName());
+        }
     }
   
 }

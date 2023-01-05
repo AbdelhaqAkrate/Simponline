@@ -15,6 +15,9 @@
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/simplonlite"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
         </properties>
     </persistence-unit>
 </persistence>

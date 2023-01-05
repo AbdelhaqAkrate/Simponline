@@ -24,7 +24,7 @@ public class ApprenantEntity {
     @Column(name = "promoId")
     private Long promoId;
     @ManyToOne
-    @JoinColumn(name = "promoId", referencedColumnName = "promoId")
+    @JoinColumn(name = "promoId", referencedColumnName = "promoId", insertable = false, updatable = false)
     private PromotionEntity promotionByPromoId;
     @OneToMany(mappedBy = "apprenantByApprenantId")
     private Collection<LivrableEntity> livrablesByApprenantId;

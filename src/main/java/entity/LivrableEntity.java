@@ -27,10 +27,10 @@ public class LivrableEntity {
     @Column(name = "apprenantId")
     private long apprenantId;
     @ManyToOne
-    @JoinColumn(name = "briefId", referencedColumnName = "briefId", nullable = false)
+    @JoinColumn(name = "briefId", referencedColumnName = "briefId", nullable = false,insertable = false, updatable = false)
     private BriefEntity briefByBriefId;
     @ManyToOne
-    @JoinColumn(name = "apprenantId", referencedColumnName = "apprenantId", nullable = false)
+    @JoinColumn(name = "apprenantId", referencedColumnName = "apprenantId", nullable = false, insertable = false, updatable = false)
     private ApprenantEntity apprenantByApprenantId;
     @Basic
     @Column(name = "message")

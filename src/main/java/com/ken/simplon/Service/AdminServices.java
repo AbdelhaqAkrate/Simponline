@@ -5,6 +5,7 @@ import java.util.List;
 import com.ken.simplon.Dao.HibrnateAdminDao;
 
 import entity.AdminEntity;
+import entity.PromotionEntity;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -63,7 +64,7 @@ public class AdminServices {
 
     //Create a method for getting all promos
     public void getAllPromos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<AdminEntity> promos = adminDao.getAllPromos();
+        List<PromotionEntity> promos = adminDao.getAllPromos();
         request.setAttribute("promos", promos);
         RequestDispatcher dispatcher = request.getRequestDispatcher("dashboard page");
         dispatcher.forward(request, response);

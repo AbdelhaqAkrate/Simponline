@@ -21,7 +21,7 @@ public class BriefEntity {
     @Column(name = "promoId")
     private Long promoId;
     @ManyToOne
-    @JoinColumn(name = "promoId", referencedColumnName = "promoId")
+    @JoinColumn(name = "promoId", referencedColumnName = "promoId", insertable = false, updatable = false)
     private PromotionEntity promotionByPromoId;
     @OneToMany(mappedBy = "briefByBriefId")
     private Collection<LivrableEntity> livrablesByBriefId;

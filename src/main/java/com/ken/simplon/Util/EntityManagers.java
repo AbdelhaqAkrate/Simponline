@@ -6,7 +6,7 @@ public class EntityManagers {
     private static EntityManagerFactory managerFactory ;
     public static EntityManagerFactory getEntityManagerFactory() {
         if(managerFactory == null) {
-            managerFactory = Persistence.createEntityManagerFactory("simplonlite");
+            managerFactory = Persistence.createEntityManagerFactory("default");
         }
         return managerFactory;
     }

@@ -22,7 +22,7 @@ public class PromotionEntity {
     @OneToMany(mappedBy = "promotionByPromoId")
     private Collection<BriefEntity> briefsByPromoId;
     @ManyToOne
-    @JoinColumn(name = "formateurId", referencedColumnName = "formateurId")
+    @JoinColumn(name = "formateurId", referencedColumnName = "formateurId", insertable = false, updatable = false)
     private FormateurEntity formateurByFormateurId;
 
     public long getPromoId() {
